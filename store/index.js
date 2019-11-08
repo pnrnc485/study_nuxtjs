@@ -1,14 +1,16 @@
 import Vuex from 'vuex'
-const store = () => new Vuex.Store({
 
-    state: {
-        counter: 0
-    },
-    mutations: {
-        increment (state) {
-            state.counter++
+const appStore = () => {
+    return new Vuex.Store({
+        state: {
+            breed_list: {},
+        },
+        mutations: {
+            breed_list_update(state, payload) {
+                state.breed_list = {...payload}
+            },
         }
-    }
-})
+    })
+};
 
-export default store
+export default appStore;
