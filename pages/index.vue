@@ -3,7 +3,8 @@
     <div class="columns is-multiline">
       <!-- v-for　でbreed_listからループ出力 -->
       <div v-for="(item, i) in breed_list" v-bind:key='i' class='column is-2'>
-        <a class="button">{{ i }}</a>
+        <!-- <a class="button">{{ i }}</a> -->
+        <nuxt-link :to="{ path: 'dogs/' + i}" class="button">{{ i }}</nuxt-link>
       </div>
     </div>
   </section>
