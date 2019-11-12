@@ -4,11 +4,12 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import dogApi from '@/api/dog'
 
 export default {
-  components: {
-    Logo
+  async fetch ({store}) {
+    let json = await dogApi.breeds()
+    store.commit('breed_list_update', json)
   }
 }
 </script>
