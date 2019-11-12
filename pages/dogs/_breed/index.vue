@@ -1,7 +1,10 @@
 <template>
     <section class="container">
         <div class="columns is-multiline">
-
+　
+            <div v-for="(item, i) in dog_list" v-bind:key="i" class="column is-1">
+                <img :src="item.url">
+            </div>
         </div>
     </section>
 </template>
